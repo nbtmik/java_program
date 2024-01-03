@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package adapterclassdemo;
+
+import java.awt.*;
+import java.awt.event.*;
+
+//class MyWindowAdapter extends WindowAdapter{//outer class
+//    public void windowClosing(WindowEvent e){
+//                System.exit(0);
+//            }
+//}
+
+class MyFrame extends Frame{
+    public MyFrame(){
+        super("Adapter Demo");
+//        addWindowListener(new WindowAdapter(){ //inner class
+//            public void windowClosing(WindowEvent e){
+//                System.exit(0);
+//            }
+//        });
+    addWindowListener(new MyWindowAdapter());
+    }
+    class MyWindowAdapter extends WindowAdapter{//inner class
+    public void windowClosing(WindowEvent e){
+                System.exit(0);
+            }
+}
+}
+
+public class Adapterclassdemo {
+
+    
+    public static void main(String[] args) {
+        MyFrame f = new MyFrame();
+        f.setSize(400,400);
+        f.setVisible(true);
+    }
+    
+}
