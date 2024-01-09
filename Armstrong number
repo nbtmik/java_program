@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package armstrongnumber;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author KIIT
+ */
+public class Armstrongnumber {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int r;
+        Scanner s= new Scanner(System.in);
+        System.out.println("Enter the number");
+        int n=s.nextInt();
+        int m=n;
+        int sum=0;
+        while(n>0){
+            r=n%10;
+            n=n/10;
+            sum = sum + r*r*r;
+        }
+        if(sum==m){
+        System.out.println("Armstrong number");
+        }else{
+         System.out.println("not Armstrong number");   
+    }
+    }
+    
+}
