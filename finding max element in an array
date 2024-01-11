@@ -1,0 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package arraymaxeleusingmethod;
+
+/**
+ *
+ * @author KIIT
+ */
+public class Arraymaxeleusingmethod {
+
+    static int max(int A[]){
+        int m=A[0];
+        for(int i=0;i<A.length;i++){
+            if(A[i]>m)
+            { m = A[i];}
+        }
+
+                return m;
+    }
+    public static void main(String[] args) {
+        int A[]={2,9,72,56,7};
+        System.out.println(max(A));
+    }
+    
+}
