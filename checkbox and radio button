@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package checkbox.radiobuttonanditemlistener;
+
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends Frame {
+    Label l;
+    Checkbox c1,c2,c3;
+    public MyFrame(){
+        super("CheckBox Demo");
+        l= new Label("Nothing is Selected");
+        c1=new Checkbox("Java");
+        c2= new Checkbox("Python");
+        c3= new Checkbox("c++");
+        
+        setLayout(new FlowLayout());
+        add(l);
+        add(c1);
+        add(c2);
+        add(c3);
+        
+    }
+} 
+
+public class CheckboxRadiobuttonanditemlistener {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        MyFrame f = new MyFrame();
+        f.setSize(400,400);
+        f.setVisible(true);
+    }
+    
+}
