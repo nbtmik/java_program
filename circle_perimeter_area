@@ -1,0 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package circle1;
+
+class Circle{
+    public double radius;
+    public double area(){
+        return Math.PI*radius*radius;        
+    }
+    public double perimeter(){
+        return Math.PI*2*radius;
+    }
+    public double circumferance(){
+        return perimeter();
+    }
+}
+
+public class Circle1 {
+
+    public static void main(String[] args) {
+        Circle c1=new Circle();
+        c1.radius=7;
+        System.out.println("Area "+c1.area());
+        System.out.println("perimeter "+c1.perimeter());
+        System.out.println("circumferance "+c1.circumferance());
+    }
+    
+}
