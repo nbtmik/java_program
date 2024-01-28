@@ -1,0 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package classfile;
+import java.io.*;
+public class Classfile {
+
+    public static void main(String[] args)throws Exception {
+        File f = new File("C:/Users/KIIT/MyJava");
+        System.out.println(f.isDirectory());
+        File List[]= f.listFiles();
+        for(File x : List)
+        {
+            System.out.print(x.getName()+"   ");
+            System.out.println(x.getPath());
+        }
+    }
+    
+}
