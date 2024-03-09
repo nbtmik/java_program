@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package database;
+import java.sql.*;
+
+
+public class Database {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)throws Exception {
+        Class.forName("org.sqlite.JDBC"); //for driver
+
+        Connection con = DriverManager.getConnection("jdbc:sqlite:C://sqlite//univ.db");//connection
+
+        Statement stm= con.createStatement(); //statement
+
+        ResultSet rs=stm.executeQuery("select * from dept"); //query
+        
+        int dno;
+String dname;
+while(rs.next())
+{
+dno=rs.getInt("deptno");
+dname=rs.getString("dname");
+System.out.println(dno+" "+dname);
+        }
+        stm.close();
+        con.close();
+    }
+    
+}
