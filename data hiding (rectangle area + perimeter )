@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package datahidingrectangle;
+
+class Rectangle{
+    private double length;
+    private double breath;
+    
+    public double getLength(){
+        return length;
+    }
+    
+    public void setLength(double l){
+        length =l;
+    }
+    public double getbreadth(){
+        return breath;
+    }
+    
+    public void setbreadth(double b){
+        breath =b;
+    }
+    
+    public double area(){
+        return length*breath;        
+    }
+    public double perimeter(){
+        return 2*(length*breath);
+    }
+} 
+
+
+public class Datahidingrectangle {
+
+    public static void main(String[] args) {
+        Rectangle r1=new Rectangle();
+        r1.setLength(7); 
+        r1.setbreadth(10);
+        System.out.println("Area "+r1.area());
+        System.out.println("perimeter "+r1.perimeter());
+    }
+    
+}
