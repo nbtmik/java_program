@@ -1,0 +1,24 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package dataoutputstreamdemo;
+import java.io.*;
+
+class Student{
+    int rollno;
+    String name;
+    String dept;
+}
+public class DataOutputStreamdemo {
+    public static void main(String[] args)throws Exception {
+        FileInputStream fin= new FileInputStream("C:/Users/KIIT/MyJava/Mytext.txt");
+        DataInputStream d = new DataInputStream(fin);
+        Student s = new Student();
+        s.rollno=d.readInt();
+        s.name = d.readUTF();
+        s.dept= d.readUTF();
+        System.out.println(s.rollno+" "+s.name+" "+s.dept);
+    }
+    
+}
