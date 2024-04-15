@@ -1,0 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package dmlinsert;
+import java.sql.*;
+
+
+public class DMLinsert {
+
+    public static void main(String[] args)throws Exception {
+        Class.forName("org.sqlite.JDBC"); //for driver
+
+        Connection con = DriverManager.getConnection("jdbc:sqlite:C://sqlite//univ.db");//connection
+        Statement stm= con.createStatement(); //statement
+        //stm.executeUpdate("insert into dept values(60,'chem')"); //insert
+        //stm.executeUpdate("delete from dept where dept=60"); //delete
+        //stm.executeUpdate("update dept set dname='chem' where deptno=50");//update
+        //stm.executeUpdate("create table Temp(a integer, b integer)");//create table DDL
+        //stm.executeUpdate("drop table temp");//drop table
+        
+        stm.close();
+        con.close();
+    }
+    
+}
