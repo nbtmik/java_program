@@ -1,0 +1,23 @@
+
+package generic1;
+import java.lang.reflect.Array;
+import java.util.*;
+
+ 
+public class Generic1<T> {
+    T data[] = (T[]) new Object[3];
+    
+    Generic1(T [] arr)
+      {
+          data = (T[]) Array.newInstance(arr.getClass().getComponentType(), data.length);
+      }
+
+    public static void main(String[] args) {
+        String [] a=new String[1];
+        Generic1<String> gd = new Generic1<>(a);
+        gd.data[0]="hi";
+        gd.data[1]="bye";
+        gd.data[2]="goodnight";        
+    }
+    
+}
