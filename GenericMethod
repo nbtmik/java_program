@@ -1,0 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package genericmethod;
+
+/**
+ *
+ * @author KIIT
+ */
+public class GenericMethod {
+    static <E> void show(E[] list){
+        for(E x:list){
+            System.out.println(x);
+        }
+    }
+    public static void main(String[] args) {
+        show(new String[] {"hi","Go","bye"});
+        show(new Integer[]{10,20,30});
+        
+    }
+    
+}
