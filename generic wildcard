@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package genericwildcard;
+
+class MyArray<T>{
+    T A[]=(T[])new Object[10];
+    int length = 0;
+    public void append(T v){
+        A[length++]=v;
+    }
+    public void display(){
+        for(T x:A){
+            System.out.println(x);
+        }
+    }
+}
+public class GenericWildcard {
+   
+    static void fun(MyArray <?> obj){
+        obj.display();
+    }
+    public static void main(String[] args) {
+        MyArray<String> ma1 = new MyArray<>();
+        ma1.append("Hi");
+        MyArray<Integer> ma2 = new MyArray<>();
+        ma2.append(1);
+        fun(ma1);
+        fun(ma2);
+    }
+    
+}
