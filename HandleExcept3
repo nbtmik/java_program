@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package handleexcept3;
+
+/**
+ *
+ * @author KIIT
+ */
+public class HandleExcept3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int A[]={1,2,0,4,5};
+        try{
+            int r=A[3]/A[2];
+            System.out.println(r);
+            try{
+                System.out.println(A[9]);
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
+        catch(ArithmeticException e){
+            System.out.println(e);
+        }
+        System.out.println("Bye");
+    }
+    
+}
