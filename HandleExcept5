@@ -1,0 +1,32 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package handleexcept5;
+
+public class HandleExcept5 {
+    
+    static int area(int l, int b)throws Exception{
+        {
+            if(l<0 || b<0)
+                throw new Exception ("value less zero");
+                int a=l*b;
+                return a;
+        }
+    }
+    
+    static void meth1(){
+        try{
+            int a=area(-10,5);
+            System.out.println(a);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    
+    public static void main(String[] args) {
+        meth1();
+    }
+    
+}
