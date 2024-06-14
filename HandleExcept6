@@ -1,0 +1,33 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package handleexcept6;
+class Lessthanzero extends Exception{
+    public String toString(){
+        return "value less zero";
+    }
+}
+public class HandleExcept6 {
+    static int area(int l, int b)throws Lessthanzero{
+        {
+            if(l<0 || b<0)
+                throw new Lessthanzero();
+                return l*b;
+        }
+    }
+    
+    static void meth1(){
+        try{
+            int a=area(-10,5);
+            System.out.println(a);
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    public static void main(String[] args) {
+        meth1();
+    }
+    
+}
