@@ -1,0 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package hashsetdemo;
+
+import java.util.*;
+
+public class Hashsetdemo {
+
+    public static void main(String[] args) {
+        HashSet<Integer> hs = new HashSet<>();
+        hs.add(10);
+        hs.add(20);
+        hs.add(30);
+        hs.add(10);
+        
+        System.out.println(hs);
+    }
+    
+}
