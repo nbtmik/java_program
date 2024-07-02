@@ -1,0 +1,25 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package hashtabledemo;
+import java.util.*;
+
+public class Hashtabledemo {
+
+    public static void main(String[] args) {
+        Hashtable<Integer,String> ht = new Hashtable<>();
+        ht.put(1, "A");
+        ht.put(2, "B");
+        ht.put(3, "C");
+        ht.put(4, "D");
+        ht.put(5, "F");
+        
+        ht.compute(2, (k,v)->"Z");
+        ht.computeIfAbsent(7, (k)->"Z");
+        
+        System.out.println(ht);
+        
+    }
+    
+}
