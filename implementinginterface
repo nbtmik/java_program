@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package implementinginterface;
+
+import javafx.application.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.stage.*;
+import javafx.scene.control.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+
+public class Implementinginterface extends Application implements EventHandler<ActionEvent>  {
+    int count = 0;
+    Button b;
+    @Override
+    public void start(Stage stage) throws Exception {
+        b = new Button("OK");
+        b.setOnAction(this);
+        b.setPrefSize(100, 30);
+        FlowPane f1= new FlowPane(b);
+        Scene sc = new Scene(f1,400,400);
+        stage.setScene(sc);
+        stage.show();
+    }
+    @Override
+    public void handle(ActionEvent t) {
+        count++;
+        b.setText(" "+count);
+    }
+
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    
+    
+    
+}
