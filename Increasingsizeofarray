@@ -1,0 +1,34 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package increasingsizeofarray;
+
+/**
+ *
+ * @author KIIT
+ */
+public class Increasingsizeofarray {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int A[]={3,9,7,8,12,6,15,5,4,10};
+        System.out.println("First length of A: "+A.length);
+        int B[]= new int[2*A.length];
+        
+        
+        for(int i=0;i<A.length;i++){
+            B[i]=A[i];
+        }
+        A = B;
+        B = null;
+        for(int x:A){
+        System.out.print(x+",");
+        }
+        System.out.println(" ");
+        System.out.println("After changing the value of A: "+A.length);
+    }
+    
+}
