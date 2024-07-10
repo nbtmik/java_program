@@ -1,0 +1,50 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package insertingelement;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author KIIT
+ */
+public class Insertingelement {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int A[]= new int[10];
+        A[0]=5;
+        A[1]=9;
+        A[2]=6;
+        A[3]=10;
+        A[4]=12;
+        A[5]=7;
+        
+        for(int x:A){
+          System.out.print(x+",");
+        }System.out.println(" ");
+        
+        //int a ; 
+//        a = A[A.length-1];
+        Scanner s= new Scanner(System.in);
+        System.out.print("Enter term where u want to put the new value: ");
+        int n = s.nextInt();
+        System.out.print("Enter the new value: ");
+        int y = s.nextInt();
+        for(int i= A.length-1;i>n;i--){
+           A[i]=A[i-1];
+           
+        }  
+        A[n]=y;
+//        A[0]=a;
+        
+        for(int x:A){
+          System.out.print(x+",");
+        }
+    }
+    
+}
