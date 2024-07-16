@@ -1,0 +1,37 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package javafcommonproperties;
+
+import javafx.application.*;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+
+public class Javafcommonproperties extends Application {
+    @Override
+    public void start(Stage stage) throws Exception {
+        Button b = new Button("Click ME");
+        b.setTextFill(Color.BLUE);
+        b.setMnemonicParsing(true);
+        Tooltip tp = new Tooltip("Click this Button to Get Message");
+        b.setTooltip(tp);
+        Alert a = new Alert(AlertType.INFORMATION,"Button is Clicked");
+        b.setOnAction(e->a.show());
+        FlowPane fp = new FlowPane(b);
+        Scene sc = new Scene(fp,400,400);
+        stage.setScene(sc);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    
+    
+}
