@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package lambdaexpressiondemo;
+
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends Frame{
+    TextField tf;
+    Button b;
+    int count=0;
+    public MyFrame(){
+        super("Lambda Expression");
+        tf= new TextField("0",20);
+        b= new Button("Click");
+        setLayout(new FlowLayout());
+        add(tf);
+        add(b);
+        b.addActionListener((ActionEvent e)->{
+            count++;
+            tf.setText(String.valueOf(count));
+        });
+    }
+}
+public class LambdaExpressionDemo {
+
+    public static void main(String[] args) {
+        MyFrame f = new MyFrame();
+        f.setSize(400,400);
+        f.setVisible(true);
+    }
+    
+}
