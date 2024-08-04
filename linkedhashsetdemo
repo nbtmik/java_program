@@ -1,0 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package linkedhashsetdemo;
+import java.util.*;
+
+public class Linkedhashsetdemo {
+    public static void main(String[] args) {
+        LinkedHashSet<String> hs = new LinkedHashSet<>(10);
+        hs.add("A");
+        hs.add("d");
+        hs.add("c");
+        hs.add("q");
+        hs.add("b");
+        hs.add("e");
+        hs.add("a");
+        
+        System.out.println(hs);
+        
+    }
+    
+}
