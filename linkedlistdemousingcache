@@ -1,0 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package linkedlistdemousingcache;
+
+import java.util.*;
+public class Linkedlistdemousingcache {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        LinkedHashMap<Integer,String> tm = new LinkedHashMap<>(5,0.75f,true){
+            protected boolean removeEldestEntry(Map.Entry e){
+            return size()>5;
+        }
+        };
+        tm.put(1, "A");
+        tm.put(2, "B");
+        tm.put(3, "C");
+        tm.put(4, "D");
+        tm.put(5, "E");
+//        tm.put(6, "F");
+        System.out.println(tm);
+    
+    }
+    
+}
