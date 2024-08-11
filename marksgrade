@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package marksgrade;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author KIIT
+ */
+public class Marksgrade {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int m1,m2,m3;
+        float avg;
+        Scanner s= new Scanner(System.in);
+        System.out.println("Enter your marks for three subject:");
+        m1=s.nextInt();
+        m2=s.nextInt();
+        m3=s.nextInt();
+        avg = (m1+m2+m3)/3;
+        
+        if(avg>=70){
+            System.out.println("A");
+        }else if((avg<70)&&(avg>=60)){
+            System.out.println("B");
+        }else if((avg<60)&&(avg>=50)){
+            System.out.println("C");
+        }else if((avg<50)&&(avg>=40)){
+            System.out.println("D");
+        }
+        
+    }
+    
+}
