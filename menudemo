@@ -1,0 +1,63 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package menudemo;
+
+import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends Frame{
+    Menu file,sub;
+    MenuItem open,save,close,closeAll;
+    CheckboxMenuItem auto;
+    TextField tf;
+    public MyFrame(){
+        super("Menu demo");
+        open = new MenuItem("Open");
+        save = new MenuItem("save");
+        close = new MenuItem("Close");
+        closeAll = new MenuItem("Close All");
+        auto= new CheckboxMenuItem("Auto Save");
+        file = new Menu("File");
+        sub = new Menu("Close");
+        file.add(open);
+        file.add(save);
+        file.add(sub);
+        file.add(auto);
+        sub.add(close);
+        sub.add(closeAll);
+        
+        MenuBar mb = new MenuBar();
+        mb.add(file);
+        setMenuBar(mb);
+        tf=new TextField(20);
+        setLayout(new FlowLayout());
+        add(tf);
+        
+        open.addActionListener((ActionEvent e)->tf.setText("Open"));
+        save.addActionListener((ActionEvent e)->tf.setText("Save"));
+        close.addActionListener((ActionEvent e)->tf.setText("Close"));
+        closeAll.addActionListener((ActionEvent e)->tf.setText("Close All"));
+        
+        auto.addItemListener((ItemEvent e)->{
+            if(auto.getState())
+                tf.setText("Auto On");
+            else
+                tf.setText("Auto off");
+        });
+    }
+}
+
+public class Menudemo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        MyFrame f = new MyFrame();
+        f.setSize(400,400);
+        f.setVisible(true);
+    }
+    
+}
