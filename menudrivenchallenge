@@ -1,0 +1,107 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package menudrivenchallenge;
+import java.util.*;
+import java.io.*;
+
+class Account implements Serializable{
+    String accno;
+    String name;
+    double balance;
+    
+    Account(){
+    }
+    
+    Account(String a , String b , double c){
+        accno=a;
+        name=b;
+        balance=c;
+    }
+    
+    public String toString(){
+        return "Account No:"+accno+"\nName"+name+"\nBalance:"+balance+"\n";
+    }
+    
+}
+
+public class Menudrivenchallenge {
+
+    public static void main(String[] args)throws Exception {
+        Account acc= null;
+        Scanner sc = new Scanner(System.in);
+        HashMap<String,Account> hm = new HashMap<>();
+        try{
+        FileInputStream fi = new FileInputStream("C:/Users/KIIT/MyJava/Account.txt");
+        ObjectInputStream os = new ObjectInputStream(fi);
+        int count = os.readInt();
+        for(int i=0;i<count;i++){
+            acc=(Account)os.readObject();
+            hm.put(acc.accno,acc);
+        }
+        fi.close();
+        os.close();
+        }
+        catch(Exception e){  
+        }
+        
+        FileOutputStream fo = new FileOutputStream("C:/Users/KIIT/MyJava/Account.txt");
+        ObjectOutputStream oo = new ObjectOutputStream(fo);
+        System.out.println("Menu");
+        int choice;
+        String accno,name;
+        double balance;
+        
+        do{
+            System.out.println("1. Create Account");
+            System.out.println("2. Delete Account");
+            System.out.println("3. View Account");
+            System.out.println("4. View  All Accounts");
+            System.out.println("5. Save Accounts");
+            System.out.println("6. Exit");            
+            System.out.println("Enter your choice: ");
+            
+            choice=sc.nextInt();
+            //to ignore this characters
+            sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+            switch(choice){
+                case 1:System.out.println("Enter Details AccNo, Name, Balance: ");
+                       accno = sc.nextLine();
+                       name = sc.nextLine();
+                       balance = sc.nextDouble();
+                       acc = new Account(accno,name,balance);
+                       hm.put(accno,acc);
+                       System.out.println("Account Ctreated for "+name);
+                       break;
+                case 2:System.out.println("Enter Accno want to remove: ");
+                       accno=sc.nextLine();
+                       hm.remove(accno);
+                       break;
+                case 3:System.out.println("Enter the Accno info you want to view: ");
+                       accno=sc.nextLine();
+                       acc=hm.get(accno);
+                       System.out.println(acc);
+                       break;
+                case 4:System.out.println("Deatails of all Acc: ");
+                       for(Account a:hm.values())
+                           System.out.println(a);
+                       break;
+                case 5:oo.writeInt(hm.size());
+                      for(Account a:hm.values())
+                          oo.writeObject(a);
+                case 6:
+                       
+                       
+            }           
+        }while(choice!=6);
+        oo.flush();
+        oo.close();
+        fo.close();
+        
+        
+        
+        
+    }
+    
+}
