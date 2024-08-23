@@ -1,0 +1,18 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package outsidestream;
+import java.io.*;
+
+public class Outsidestream {
+
+    public static void main(String[] args)throws Exception {
+        try(FileOutputStream fos=new FileOutputStream("C:/Users/KIIT/MyJava/Test1.txt");){
+        String str = "Learn java Programming";
+        fos.write(str.getBytes());
+        fos.close();
+        }
+    }
+    
+}
